@@ -1,0 +1,62 @@
+
+a,.tp-caption a.btn:hover {
+	color: #5a6e5e;
+}
+.top-nav-collapse {
+	background: #5a6e5e;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+	color: #5a6e5e;
+}
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span
+{
+	background-color: #5a6e5e;
+}
+
+.widget-avatar .avatar:hover {
+	border: 5px solid #5a6e5e;
+}
+
+.bg-skin {
+	background: #5a6e5e;
+}
+
+form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
+	border-color: #5a6e5e;
+}
+
+footer {
+	background-color: #5a6e5e;
+}
+
+.btn-skin {
+  color: #fff;
+  background-color: #5a6e5e;
+  border-color: #5a6e5e;
+}
+
+
+.feature.active {
+  fill: orange;
+}
+
+
+.feature {
+  fill: rgb(213,222,217);
+  opacity: .5;
+  cursor: pointer;
+  stroke: #fff;
+  stroke-width: 1;
+	
+}
+
+
+.feature.over{
+	fill:#542437 
+}
+
+.feature.under{
+	fill:#d95b43 
+}
