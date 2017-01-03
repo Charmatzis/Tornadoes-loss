@@ -20,9 +20,11 @@ The data have being downloaded from NOAA's National Weather Service [Storm predi
 
 The csv with the data of the tornadoes from 1950-2016 can be found [here](data/All_tornadoes_with_headers.csv)
 
-## Azure Machine Learning
+## Machine Learning
 
 The data have being uploaded, filtered and analyzed so they would be ready for training the model.
+
+### Azure Machine Learning
 
 For this procedure was used the `Azure Machine Learning` platform ([link](studio.azureml.net/)) 
 
@@ -30,10 +32,15 @@ In the figure below shows the whole procedure for training and eveluating the mo
 
 ![Azure ML Studio](images/model.jpg)
 
+### Modeling
+
 There have being used many Machine Learning Algorithms, but it end up in two:
 
 1. Two-Class Logistic Regression 
 2. Two-Class Averaged Perceptron 
+
+
+### Evaluation 
 
 The Roc Curve is over the random guess 
 
@@ -44,6 +51,8 @@ The evaluation of the two training model are shown below
 ![evaluation](images/results.jpg)
 
  *Notice, that the accuracy was around 85% and the precision 87%.*
+
+### Cortana Analytics Gallery 
 
 The experiment is published in the Cortana Analytics Gallery and can be found in the above link:
 
