@@ -97,4 +97,6 @@ Below, are shown two examples with results:
 
 The whole project is under the MIT License
 
+## More reading
+
 For more details please, check out the folder [docs](/docs)
