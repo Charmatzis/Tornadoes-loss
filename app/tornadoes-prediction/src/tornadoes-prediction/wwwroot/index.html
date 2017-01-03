@@ -36,8 +36,8 @@
 			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	  <ul class="nav navbar-nav">
 		<li class="active"><a href="#intro">Home</a></li>
-		<li><a href="#about">About</a></li>
-		<li><a href="#service">Service</a></li>
+		<li><a href="#mappane">Map</a></li>
+		<li><a href="#service">Open Sourcing</a></li>
 		<li><a href="#contact">Contact</a></li>
 		
 	  </ul>
@@ -57,7 +57,7 @@
 			</h4>
 		</div>
 		<div class="page-scroll">
-			<a href="#service" class="btn btn-circle">
+			<a href="#mappane" class="btn btn-circle">
 				<i class="fa fa-angle-double-down animated"></i>
 			</a>
 		</div>
@@ -66,123 +66,104 @@
 
 
 
-	<section id="feature">
+	<section id="mappane" class="home-section text-center">
 		<div class="container">
-		   <div class="center wow fadeInDown">
-				<h2>Features</h2>
-				<p class="lead">Easy to use, Responsive features, Mobile-first approach <br> Browser compatibility Bootstrap is compatible with all modern browsers</p>
+			<div class="center wow fadeInDown">
+				<h2>Map</h2>
+				<p class="lead">Select a state by clicking it <br /> Then fill the form and press the button submit.</p>
 			</div>
 
 			<div class="row">
-				<div class="col-lg-6" id="map"></div>
-				<div class="col-lg-offset-3">
-					<form id="form-ml" action="api/Tornadoes" method="get">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="form-group">
-									<label for="Month" class="col-lg-4 control-label">Month</label>
-									<div class="col-lg-12">
-										<select name="Month">
-											<option value="January">January</option>
-											<option value="February">February</option>
-											<option value="March">March</option>
-											<option value="April">April</option>
-											<option value="May">May</option>
-											<option value="June">June</option>
-											<option value="July">July</option>
-											<option value="August">August</option>
-											<option value="September">September</option>
-											<option value="October">October</option>
-											<option value="November">November</option>
-											<option value="December">December</option>
-										</select>
+				<div class="row">
+					<div class="col-lg-6" id="map"></div>
+				</div>
+				<div class="row" style="padding-top:60px;">
+					<div id="result" ></div>
+					<div class="col-lg-offset-3">
+						<form id="form-ml" action="api/Tornadoes" method="get">
+							<div class="row">
+								<div class="col-md-8">
+									<div class="form-group">
+										<label for="Month" class="col-lg-12 control-label">Month</label>
+										<div class="col-lg-12">
+											<select name="Month" class="form-control">
+												<option value="January">January</option>
+												<option value="February">February</option>
+												<option value="March">March</option>
+												<option value="April">April</option>
+												<option value="May">May</option>
+												<option value="June">June</option>
+												<option value="July">July</option>
+												<option value="August">August</option>
+												<option value="September">September</option>
+												<option value="October">October</option>
+												<option value="November">November</option>
+												<option value="December">December</option>
+											</select>
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label for="State" class="col-lg-4 control-label">State</label>
-									<div class="col-lg-12">
-										<input type="text" class="form-control" name="State" id="State" />
+									<div class="form-group">
+										<label for="State" class="col-lg-12 control-label">State</label>
+										<div class="col-lg-12">
+											<input type="text" class="form-control" name="State" id="State" />
 
+										</div>
 									</div>
-								</div>
 
-								<div class="form-group">
-									<label for="FScale" class="col-lg-4 control-label">FScale</label>
-									<div class="col-lg-12">
-										<input type="text" class="form-control" name="FScale" id="FScale" placeholder="from 1-9" />
-
+									<div class="form-group">
+										<label for="FScale" class="col-lg-12 control-label">FScale</label>
+										<div class="col-lg-12">
+											<select name="FScale" class="form-control">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+											</select>
+										</div>
 									</div>
-								</div>
 
-								<div class="form-group">
-									<label for="Lengthmiles" class="col-lg-12 control-label">Length in miles</label>
-									<div class="col-lg-12">
-										<input type="text" class="form-control" name="Lengthmiles" id="Lengthmiles" placeholder="9.5" />
+									<div class="form-group">
+										<label for="Lengthmiles" class="col-lg-12 control-label">Length in miles</label>
+										<div class="col-lg-12">
+											<input type="text" class="form-control" name="Lengthmiles" id="Lengthmiles" placeholder="9.5" />
 
+										</div>
 									</div>
-								</div>
 
-								<div class="form-group">
-									<label for="Widthyards" class="col-lg-12 control-label">Width in yards</label>
-									<div class="col-lg-12">
-										<input type="text" class="form-control" name="Widthyards" id="Widthyards" placeholder="150" />
-
+									<div class="form-group">
+										<label for="Widthyards" class="col-lg-12 control-label">Width in yards</label>
+										<div class="col-lg-12">
+											<input type="text" class="form-control" name="Widthyards" id="Widthyards" placeholder="150" />
+											<span class="help-block">All the fields must be completed.</span>
+										</div>
 									</div>
-								</div>
 
 
-								<div class="form-group">
-									<div class="col-lg-12 col-lg-offset-2">
-										<button type="reset" class="btn btn-default">Cancel</button>
-										<button type="submit" class="btn btn-primary">Submit</button>
+									<div class="form-group">
+										<div class="col-lg-12 col-lg-offset-2">
+											<button type="reset" class="btn btn-default">Cancel</button>
+											<button type="submit" class="btn btn-primary">Submit</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
-			</div><!--/.row-->    
-		</div><!--/.container-->
+				</div><!--/.row-->
+			</div><!--/.container-->
+		</div>
 	</section>
 	<!--/#feature-->
 
 
-	<!-- Section: about -->
-	<section id="about" class="home-section text-center">
-		<div class="heading-about">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow fadeInUp" data-wow-delay="0.4s">
-					<div class="section-heading">
-					<h2>About me</h2>
-					<br />
 
-					</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		<div class="container">
-		
-		<div class="row">
-			<div class="col-xs-6 col-sm-3 col-md-3">
-				<div class="wow bounceInUp" data-wow-delay="0.2s">
-				<div class="team boxed-grey">
-					<div class="inner">
-						<h5>Christos Charmatzis</h5>
-						<p class="subtitle">Data Scientist/ GIS Specialist</p>
-						<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
-					</div>
-				</div>
-				</div>
-			</div>
-		
-		</div>		
-		</div>
-	</section>
-	<!-- /Section: about -->
+	
 	<!-- Section: services -->
 	<section id="service" class="home-section text-center bg-gray">
 		<div class="heading-about">
@@ -265,21 +246,36 @@
 	<section id="contact" class="home-section text-center">
 		<div class="heading-contact">
 			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow bounceInDown" data-wow-delay="0.4s">
-					<div class="section-heading">
-					<h2>Get in touch</h2>					
-					</div>
-					</div>
-				</div>
-			</div>
+				<div class="row">
+					
+
+				</div>	
+			
 			</div>
 		</div>
 		<div class="container">		
 	<div class="row">
 		
-		
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="wow bounceInDown" data-wow-delay="0.4s">
+				<div class="section-heading">
+					<h2>Get in touch</h2>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="wow bounceInUp" data-wow-delay="0.2s">
+				<div class="team boxed-grey">
+					<div class="inner">
+						<h5>Christos Charmatzis</h5>
+						<p class="subtitle">Data Scientist/ GIS Specialist</p>
+						<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="col-lg-4">
 			<div class="widget-contact">
 				

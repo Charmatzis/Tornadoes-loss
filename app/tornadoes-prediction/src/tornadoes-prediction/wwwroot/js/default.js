@@ -1,7 +1,10 @@
 ﻿//Width and height of map
-
-var width = 1060;
+var viewportWidth = $(window).width();
+var viewportHeight = $(window).height() / 2;
+var width = viewportWidth * .60;
 var height = 500;
+//var width = 1060;
+//var height = 500;
 
 // D3 Projection
 var projection = d3.geo.albersUsa()
@@ -15,7 +18,7 @@ var path = d3.geo.path()               // path generator that will convert GeoJS
 
 // Define linear scale for output
 var color = d3.scale.linear()
-			  .range(["rgb(84,36,55)", "rgb(217,91,67)"]);
+			  .range(["rgb(84,36,55)", "rgb(26,86,36)"]);
 
 var legendText = ["under $5,000,000 loss", "over $5,000,000 loss"];
 
@@ -144,17 +147,22 @@ $("#form-ml").submit(function () {
 				d3.selectAll(".over").classed("over", false);
 				d3.selectAll(".under").classed("under", false);
 				d3.selectAll(".active").classed("active", active = false);
+				var result = '<div class="';
 				if(response[1]==="more than $5,000,000")
 				{
 					
 					d3.select('#' + response[0])
 					.classed("over", true);
+					result += 'bg-danger"';
 
 				}
 				else {
 					d3.select('#' + response[0])
 						.classed("under", true);
+					result += 'bg-success"';
 				}
+				result += '>The state ' + response[0] + ' will have losses ' + response[1] + ' with probability ' + Math.round(response[2] * 100) + '%</div>';
+				$('#result').html(result);
 			}
 		})
 		.error(function () {
