@@ -13,6 +13,9 @@ Tornadoes-loss is a predictive service for calculating the loss in US dollars fr
 
 This is a Machine Learning experiment, which implements Predictive Analytic service in GIS projects using Azure Machine Learning.
 
+## System Architecture
+
+![System Architecture](images/Architecture.jpg)
 
 ## Data
 
