@@ -81,19 +81,37 @@ The web application can be found here:
 
 For the need of the projected it was used JS libraries like D3.js, which creates very quickly svg inteactive maps.
 
-## Prediction Analytic Service Test
+## Case Study
 
-Below, are shown two examples with results:
+Tornado loss perdiction analysis service is a case study for predicting the cost for more or less 
+than $5,000,000. 
+
+The user can fill the parameters of the form and by submitting it, get the result of the loss than will occure.
+
+There are two ways of querying the service:
+
+1. By selecting one month at a time.
+2. By selecting all the months and get an annual result.
+
+For the first way, the client can discover if separately what will happen in a state.
+For the second way, the client can discover that is the period that is more probably to have loss more tha $5,000,000.   
+
+Below, are shown 3 examples with their results:
 1. tornado loss more than $5,000,000.
 2. tornado loss less than $5,000,000.
+3. tornado loss, 12 months prediction.
 
-### Example 1
+### Example over than $5,000,000 
 
 ![more than $5,000,000](images/more.jpg) 
 
-### Example 2
+### Example less than $5,000,000 
 
 ![less than $5,000,000](images/less.jpg)
+
+### Example 12 month prediction 
+
+![12 month prediction](images/allmonths.jpg)
 
 
 ## License

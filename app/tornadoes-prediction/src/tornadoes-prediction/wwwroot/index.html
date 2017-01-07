@@ -1,330 +1,315 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Tornadoes" />
-	<meta name="author" content="Christos Charmatzis" />
-	<title>Tornadoes prediction model</title>
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" type="text/css" rel="Stylesheet" />
-	<link rel="stylesheet" type="text/css" href="css/animate.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link href="css/default.css" rel="stylesheet" type="text/css" />
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-		rel="stylesheet" type="text/css" />
-	<script src="http://d3js.org/d3.v3.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tornadoes loss using Azure Machine Learning" />
+    <meta name="author" content="Christos Charmatzis" />
+    <title>Tornadoes prediction model</title>
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="Stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-	<div id="preloader">
-		<div id="load">
-		</div>
-	</div>
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="index.aspx">
-					<h1>Tornadoes Prediction</h1>
-				</a>
-			</div>
+    <div id="preloader">
+        <div id="load">
+        </div>
+    </div>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.aspx">
+                    <h1>Tornadoes Prediction</h1>
+                </a>
+            </div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-	  <ul class="nav navbar-nav">
-		<li class="active"><a href="#intro">Home</a></li>
-		<li><a href="#mappane">Map</a></li>
-		<li><a href="#service">Open Sourcing</a></li>
-		<li><a href="#contact">Contact</a></li>
-		
-	  </ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
-	<!-- Section: intro -->
-	<section id="intro" class="intro">
-	
-		<div class="slogan">
-			<h2><span class="text_color">Tornadoes prediction Model</span> </h2>
-			<h4>This is a Machine Learning model for predicting the loss from Tornadoes
-			<br />
-			 all you need is to input some parameters and get the prediction.
-			</h4>
-		</div>
-		<div class="page-scroll">
-			<a href="#mappane" class="btn btn-circle">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-	</section>
-	<!-- /Section: intro -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#intro">Home</a></li>
+                    <li><a href="#mappane">Map</a></li>
+                    <li><a href="#service">Open Sourcing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Section: intro -->
+    <section id="intro" class="intro">
 
+        <div class="slogan">
+            <h2><span class="text_color">Tornadoes prediction Model</span> </h2>
+            <h4>
+                This is a Machine Learning model for predicting the loss from Tornadoes
+                <br />
+                all you need is to input some parameters and get the prediction.
+            </h4>
+        </div>
+        <div class="page-scroll">
+            <a href="#mappane" class="btn btn-circle">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>
+        </div>
+    </section>
+    <!-- /Section: intro -->
 
+    <section id="mappane" class="home-section text-center">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Map</h2>
+                <p class="lead">Select a state by clicking it <br /> Then fill the form and press the button submit.</p>
+            </div>
 
-	<section id="mappane" class="home-section text-center">
-		<div class="container">
-			<div class="center wow fadeInDown">
-				<h2>Map</h2>
-				<p class="lead">Select a state by clicking it <br /> Then fill the form and press the button submit.</p>
-			</div>
+            <div class="row">
+                <div class="row ">
+                    <div class="col-lg-8" id="map"></div>
+                    <svg class="chart"></svg>
+                </div>
+                    <div class="row" style="padding-top:60px;">
+                        <div id="result"></div>
+                        <div class="col-lg-offset-3">
+                            <form id="form-ml" action="api/Tornadoes" method="get">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="Month" class="col-lg-12 control-label">Month</label>
+                                            <div class="col-lg-12">
+                                                <select name="Month" class="form-control">
+                                                    <option value="January">January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April">April</option>
+                                                    <option value="May">May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                    <option value="August">August</option>
+                                                    <option value="September">September</option>
+                                                    <option value="October">October</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                </select>
+                                                <input type="checkbox" value="all_months" id="all_months_chb" /> Or select all months<br />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="State" class="col-lg-12 control-label" >State</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" required name="State" id="State" />
+                                            </div>
+                                        </div>
 
-			<div class="row">
-				<div class="row">
-					<div class="col-lg-6" id="map"></div>
-				</div>
-				<div class="row" style="padding-top:60px;">
-					<div id="result" ></div>
-					<div class="col-lg-offset-3">
-						<form id="form-ml" action="api/Tornadoes" method="get">
-							<div class="row">
-								<div class="col-md-8">
-									<div class="form-group">
-										<label for="Month" class="col-lg-12 control-label">Month</label>
-										<div class="col-lg-12">
-											<select name="Month" class="form-control">
-												<option value="January">January</option>
-												<option value="February">February</option>
-												<option value="March">March</option>
-												<option value="April">April</option>
-												<option value="May">May</option>
-												<option value="June">June</option>
-												<option value="July">July</option>
-												<option value="August">August</option>
-												<option value="September">September</option>
-												<option value="October">October</option>
-												<option value="November">November</option>
-												<option value="December">December</option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="State" class="col-lg-12 control-label">State</label>
-										<div class="col-lg-12">
-											<input type="text" class="form-control" name="State" id="State" />
+                                        <div class="form-group">
+                                            <label for="FScale" class="col-lg-12 control-label">FScale</label>
+                                            <div class="col-lg-12">
+                                                <select name="FScale" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-										</div>
-									</div>
+                                        <div class="form-group">
+                                            <label for="Lengthmiles" class="col-lg-12 control-label" >Length in miles</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" required name="Lengthmiles" id="Lengthmiles" placeholder="9.5" />
+                                            </div>
+                                        </div>
 
-									<div class="form-group">
-										<label for="FScale" class="col-lg-12 control-label">FScale</label>
-										<div class="col-lg-12">
-											<select name="FScale" class="form-control">
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-												<option value="8">8</option>
-												<option value="9">9</option>
-											</select>
-										</div>
-									</div>
+                                        <div class="form-group">
+                                            <label for="Widthyards" class="col-lg-12 control-label">Width in yards</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" required name="Widthyards" id="Widthyards" placeholder="150" />
+                                                <span class="help-block">All the fields must be completed.</span>
+                                            </div>
+                                        </div>
 
-									<div class="form-group">
-										<label for="Lengthmiles" class="col-lg-12 control-label">Length in miles</label>
-										<div class="col-lg-12">
-											<input type="text" class="form-control" name="Lengthmiles" id="Lengthmiles" placeholder="9.5" />
+                                        <div class="form-group">
+                                            <div class="col-lg-12 col-lg-offset-2">
+                                                <button type="reset" class="btn btn-default">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!--/.row-->
+        </div><!--/.container-->
+    </section>
+    <!--/#feature-->
+    <!-- Section: services -->
+    <section id="service" class="home-section text-center bg-gray">
+        <div class="heading-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading">
+                                <h2>Open Sourcing</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
 
-										</div>
-									</div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <img src="img/icons/service-icon-1.png" alt="" />
+                            </div>
+                            <div class="service-desc">
+                                <h5>GitHub</h5>
+                                <p><a href="https://github.com/Charmatzis/Tornadoes-loss" target="_blank"><h3>Tornadoes-loss</h3></a>  </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <img src="img/icons/service-icon-4.png" alt="" />
+                            </div>
+                            <div class="service-desc">
+                                <h5>Tornadoes Data</h5>
+                                <p> <a href="http://www.spc.noaa.gov/wcm/#jmc" target="_blank"><h3>Storm prediction center</h3></a>   </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <img src="img/icons/service-icon-2.png" alt="" />
+                            </div>
+                            <div class="service-desc">
+                                <h5>Cortana Analytics</h5>
+                                <p>
+                                    <a href="https://gallery.cortanaintelligence.com/Experiment/Tornadoes-cost-experiment-1" target="_blank"><h3>Tornadoes-cost-experiment</h3></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <img src="img/icons/service-icon-3.png" alt="" />
+                            </div>
+                            <div class="service-desc">
+                                <h5>Microsoft Azure Web App</h5>
 
-									<div class="form-group">
-										<label for="Widthyards" class="col-lg-12 control-label">Width in yards</label>
-										<div class="col-lg-12">
-											<input type="text" class="form-control" name="Widthyards" id="Widthyards" placeholder="150" />
-											<span class="help-block">All the fields must be completed.</span>
-										</div>
-									</div>
+                                <p>
+                                    <a href="http://portal.azure.com" target="_blank"><h3>Azure Portal</h3></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Section: services -->
+    <!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+        <div class="heading-contact">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
 
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>Get in touch</h2>
+                        </div>
+                    </div>
+                </div>
 
-									<div class="form-group">
-										<div class="col-lg-12 col-lg-offset-2">
-											<button type="reset" class="btn btn-default">Cancel</button>
-											<button type="submit" class="btn btn-primary">Submit</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				</div><!--/.row-->
-			</div><!--/.container-->
-		</div>
-	</section>
-	<!--/#feature-->
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5>Christos Charmatzis</h5>
+                                <p class="subtitle">Data Scientist/ GIS Specialist</p>
+                                <div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-contact">
 
-
-
-	
-	<!-- Section: services -->
-	<section id="service" class="home-section text-center bg-gray">
-		<div class="heading-about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-							<div class="section-heading">
-								<h2>Open Sourcing</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-
-			<div class="row">
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="service-box">
-							<div class="service-icon">
-								<img src="img/icons/service-icon-1.png" alt="" />
-							</div>
-							<div class="service-desc">
-								<h5>GitHub</h5>
-								<p>You can find all the details of this project in Github <a href="https://github.com/Charmatzis/Tornadoes-loss" target="_blank">Tornadoes-loss</a>  </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="service-box">
-							<div class="service-icon">
-								<img src="img/icons/service-icon-4.png" alt="" />
-							</div>
-							<div class="service-desc">
-								<h5>Tornadoes Data</h5>
-								<p>The Data are from NOAA's National Weather Service <a href="http://www.spc.noaa.gov/wcm/#jmc" target="_blank">Storm prediction center</a>   </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="service-box">
-							<div class="service-icon">
-								<img src="img/icons/service-icon-2.png" alt="" />
-							</div>
-							<div class="service-desc">
-								<h5>Cortana Analytics</h5>
-								<p>
-									The experiment is stored in Cortana Analytics <a href="https://gallery.cortanaintelligence.com/Experiment/Tornadoes-cost-experiment-1" target="_blank">Tornadoes-cost-experiment</a>
-								</p>
-									
-							   
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInRight" data-wow-delay="0.2s">
-						<div class="service-box">
-							<div class="service-icon">
-								<img src="img/icons/service-icon-3.png" alt="" />
-							</div>
-							<div class="service-desc">
-								<h5>Microsoft Azure</h5>
-								<p>The web project has been publish in Azure as a Web App.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /Section: services -->
-	<!-- Section: contact -->
-	<section id="contact" class="home-section text-center">
-		<div class="heading-contact">
-			<div class="container">
-				<div class="row">
-					
-
-				</div>	
-			
-			</div>
-		</div>
-		<div class="container">		
-	<div class="row">
-		
-		<div class="col-lg-8 col-lg-offset-2">
-			<div class="wow bounceInDown" data-wow-delay="0.4s">
-				<div class="section-heading">
-					<h2>Get in touch</h2>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="col-xs-6 col-sm-3 col-md-3">
-			<div class="wow bounceInUp" data-wow-delay="0.2s">
-				<div class="team boxed-grey">
-					<div class="inner">
-						<h5>Christos Charmatzis</h5>
-						<p class="subtitle">Data Scientist/ GIS Specialist</p>
-						<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="widget-contact">
-				
-				
-
-				<address>
-				  <strong>Email</strong><br>
-				  <a href="mailto:#">xr_xarmatzis@outlook.com</a>
-				</address>	
-				<address>
-				  <strong>Or with social networks</strong><br>
-						<ul class="company-social">
-							<li class="social-twitter"><a href="https://twitter.com/xarmatzis" target="_blank"><i class="fa fa-twitter"></i></a></li>
-							<li class="social-dribble"><a href="https://gr.linkedin.com/in/christoscharmatzis" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-							<li class="social-google"><a href="https://github.com/Charmatzis" target="_blank"><i class="fa fa-github"></i></a></li>
-						</ul>	
-				</address>					
-			
-			</div>	
-		</div>
-	</div>	
-
-		</div>
-	</section>
-	<!-- /Section: contact -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="wow shake" data-wow-delay="0.4s">
-					<div class="page-scroll marginbot-30">
-						<a href="#intro" id="totop" class="btn btn-circle">
-							<i class="fa fa-angle-double-up animated"></i>
-						</a>
-					</div>
-					</div>
-					<p>&copy;Copyright 2017 - Christos Charmatzis. All rights reserved.</p>
-				</div>
-			</div>	
-		</div>
-	</footer>
-	<!-- Core JavaScript Files -->
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/jquery.easing.min.js" type="text/javascript"></script>
-	<script src="js/jquery.scrollTo.js" type="text/javascript"></script>
-	<script src="js/wow.min.js"></script>
-	<!-- Custom Theme JavaScript -->
-	<script src="js/custom.js" type="text/javascript"></script>
-	<script src="js/default.js" type="text/javascript"></script>
+                        <address>
+                            <strong>Email</strong><br />
+                            <a href="mailto:#">xr_xarmatzis@outlook.com</a>
+                        </address>
+                        <address>
+                            <strong>Or with social networks</strong><br />
+                            <ul class="company-social">
+                                <li class="social-twitter"><a href="https://twitter.com/xarmatzis" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-dribble"><a href="https://gr.linkedin.com/in/christoscharmatzis" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="social-google"><a href="https://github.com/Charmatzis" target="_blank"><i class="fa fa-github"></i></a></li>
+                            </ul>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Section: contact -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="wow shake" data-wow-delay="0.4s">
+                        <div class="page-scroll marginbot-30">
+                            <a href="#intro" id="totop" class="btn btn-circle">
+                                <i class="fa fa-angle-double-up animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>&copy;Copyright 2017 - Christos Charmatzis. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="js/jquery.scrollTo.js" type="text/javascript"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/default.js" type="text/javascript"></script>
 </body>
 </html>
