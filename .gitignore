@@ -1,0 +1,17 @@
+*.swp
+
+*.*~
+
+bin/
+
+obj/
+
+Properties/
+
+project.lock.json
+
+.DS_Store
+
+*.pyc
+
+.vscode

@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using tornadoes_prediction.Model;
-using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,28 +14,28 @@ namespace tornadoes_prediction.Controllers
     [Route("api/[controller]")]
     public class TornadoesController : Controller
     {
-
-
-        
-
         [HttpGet]
-        public async Task<IEnumerable<string>> Get(Request request)
+        public async Task<JsonResult> Get(Request request)
         {
             Response response = new Response();
             response = await InvokeRequestResponseService(request);
             if (response != null)
             {
-                string state = response.Results.output1[0].State;
-                string loss= response.Results.output1[0].Losses;
-                string probability = response.Results.output1[0].Probability;
-                return new string[] { state, loss, probability };
+                var result = new Output1() {
+                    State = response.Results.output1[0].State,
+                    Month = response.Results.output1[0].Month,
+                    Losses = response.Results.output1[0].Losses,
+                    Probability = response.Results.output1[0].Probability
+                };
+                
+                return Json(result);
+                
+                //return new string[] { state, month, loss, probability };
             }
             else
             {
                 return null;
             }
-           
-           
         }
 
         // POST api/values
@@ -44,7 +43,6 @@ namespace tornadoes_prediction.Controllers
         public void Post([FromBody]string value)
         {
         }
-
 
         private async Task<Response> InvokeRequestResponseService(Request request)
         {
@@ -83,12 +81,10 @@ namespace tornadoes_prediction.Controllers
                     }
                 };
 
-                const string apiKey = "123"; // Replace this with the API key for the web service
+                const string apiKey = ""; // Replace this with the API key for the web service
+
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
                 client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/73b16fd087ab4caab38efba1867bd365/services/ca86e868c5c445b6a19c5a5385828440/execute?api-version=2.0&format=swagger");
-
-              
-
                 HttpResponseMessage response = await client.PostAsJsonAsync("", scoreRequest);
 
                 if (response.IsSuccessStatusCode)
@@ -107,7 +103,7 @@ namespace tornadoes_prediction.Controllers
                     Console.WriteLine(response.Headers.ToString());
 
                     string responseContent = await response.Content.ReadAsStringAsync();
-                    return null; 
+                    return null;
                 }
             }
         }

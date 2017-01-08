@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace tornadoes_prediction.Model
+﻿namespace tornadoes_prediction.Model
 {
-
     public class Response
     {
         public Results Results { get; set; }
@@ -19,12 +13,8 @@ namespace tornadoes_prediction.Model
     public class Output1
     {
         public string State { get; set; }
+        public string Month { get; set; }
         public string Losses { get; set; }
         public string Probability { get; set; }
     }
-
 }
-
-
-
-
