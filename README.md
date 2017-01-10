@@ -103,15 +103,15 @@ Below, are shown 3 examples with their results:
 
 ### Example over than $5,000,000 
 
-![more than $5,000,000](images/more.jpg) 
+![more than $5,000,000](images/more.gif) 
 
 ### Example less than $5,000,000 
 
-![less than $5,000,000](images/less.jpg)
+![less than $5,000,000](images/less.gif)
 
 ### Example 12 month prediction 
 
-![12 month prediction](images/allmonths.jpg)
+![12 month prediction](images/all_months.gif)
 
 
 ## License
