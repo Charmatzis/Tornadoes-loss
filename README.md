@@ -29,7 +29,7 @@ The data have being uploaded, filtered and analyzed so they would be ready for t
 
 ### Azure Machine Learning
 
-For this procedure was used the `Azure Machine Learning` platform ([link](studio.azureml.net/)) 
+For this procedure was used the `Azure Machine Learning` platform ([link](http://studio.azureml.net/)) 
 
 In the figure below shows the whole procedure for training and eveluating the model.
 
