@@ -74,10 +74,10 @@ d3.csv("data/us-codes.csv", function (data) {
 			$('#State').val(d.properties.label);
 
 			var b = path.bounds(d);
-			svg.transition().duration(750).attr("transform",
+			/*svg.transition().duration(750).attr("transform",
 				"translate(" + projection.translate() + ")"
 				+ "scale(" + .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height) + ")"
-				+ "translate(" + -(b[1][0] + b[0][0]) / 2 + "," + -(b[1][1] + b[0][1]) / 2 + ")");
+				+ "translate(" + -(b[1][0] + b[0][0]) / 2 + "," + -(b[1][1] + b[0][1]) / 2 + ")");*/
 		}
 
 		function reset() {
