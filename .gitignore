@@ -15,3 +15,5 @@ project.lock.json
 *.pyc
 
 .vscode
+
+APIKey.txt
